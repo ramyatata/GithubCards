@@ -3,19 +3,19 @@ const SRC_DIR = path.join(__dirname, '/client/src');
 const DES_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: `${SRC_DIR}\index.js`,
+  entry: `${SRC_DIR}/index.js`,
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
     path: DES_DIR
   },
   module: {
     rules: [
       {
-        test: /\.jsx/,
+        test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
